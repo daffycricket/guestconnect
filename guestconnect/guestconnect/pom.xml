@@ -36,6 +36,11 @@
 			<artifactId>support-v4</artifactId>
 			<version>r22</version>
 		</dependency>
+		<dependency>
+			<groupId>com.flurry</groupId>
+			<artifactId>flurryanalytics</artifactId>
+			<version>5.3.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>

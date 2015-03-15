@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guest Connect</string>
+    <string name="activity_settings">Paramètres</string>
+    <string name="activity_history">Historique de connexions</string>
+    <string name="activity_terms_of_use">Conditions d\'utilisation du GUEST</string>
+    
+    <string name="action_about">A propos</string>
+    <string name="action_check_connect">Test d\'accès Internet</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_history">Historique</string>
+        
+    <string name="tab_french">Français</string>
+    <string name="tab_english">Anglais</string>
+    
+    <string name="title_about">A propos</string>
+    <string name="title_authentication_result">Résultat de connexion</string>
+    <string name="title_authentication_details">Détails de connexion</string>
+    
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Annuler</string>
+    
+    <string name="lblEmail">Email</string>
+    <string name="hint_email">prenom.nom@axa.fr</string>
+    <string name="lblPassword">Mot de passe</string>
+    <string name="lblAcceptTermsOfUse">J\'accepte les conditions d\'utilisation</string>
+    <string name="lblAccess">Accès</string>
+    <string name="lblConnectionTime">Date et heure de connexion</string>
+    <string name="lblIPAddress">Addresse IP</string>
+    <string name="btn_connect">Connexion</string>
+    <string name="btn_disconnect">Déconnexion</string>
+    
+    <string name="msg_logon_succeeded">%1$s OK, %2$s connecté/e avec %3$s et addresse IP %4$s</string>
+    <string name="msg_logon_failed_invalid_passaxa">%1$s KO, incorrect PassAXA</string>
+    <string name="msg_logon_failed">%1$s KO</string>
+    <string name="msg_logon_failed_with_details">%1$s KO: %2$s</string>
+    <string name="msg_logon_type_manual">Logon manuel</string>
+    <string name="msg_logon_type_auto">Logon auto</string>
+    
+    <string name="msg_authentication_successful">Authentification réussie</string>    
+    <string name="msg_authentication_failed">Authentification KO: </string>
+    <string name="msg_disconnected">Deconnexion réussie</string>
+    <string name="msg_fill_required_fields">Renseignez votre email et mot de passe</string>    
+    <string name="msg_type_valid_email">Saisissez un email valide</string>    
+    <string name="msg_not_connected_to_guest">Vous n\'êtes pas connecté au WIFI GUEST</string>        
+    <string name="msg_authenticating">Authentification...</string>    
+    <string name="msg_disconnecting">Déconnexion...</string>    
+    <string name="msg_check_internet_err_incorrect_url">L\'URL de test est incorrecte, vérification de l\'accès à www.google.com...</string>    
+    <string name="msg_check_internet">Vérification de l\'accès à </string>
+    <string name="msg_connected_to_internet_through_guest">Connecté à internet via le WIFI GUEST</string>
+    <string name="msg_connected_to_internet_not_through_guest">Connecté à internet... mais pas via le WIFI GUEST</string>
+    <string name="msg_not_connected_to_internet">Non connecté à Internet</string>
+    <string name="msg_incorrect_passaxa">Email ou mot de passe incorrect. Corrigez ou recréez votre PassAxa.</string>   
+    
+    <string name="msg_about">
+	    <![CDATA[
+			GuestConnect vous aide à vous connecter automatiquement au WIFI GUEST à l\'aide de votre PassAXA.
+			Elle vous permet de stocker votre PassAXA, et ainsi éviter de le ressaisir 
+			plusieurs fois par jour dans le navigateur Android.
+			
+			\n\nL\'appli stocke votre PassAXA sur votre device: elle ne l\'enverra jamais sur le réseau
+			et ne le stockera jamais dans un cloud ou un serveur distant.
+			
+			\n\nEnfin, GuestConnect n\'est pas une appli officielle distribuée par AXA.
+			Elle est développée et distribuée par un collaborateur AXA dans le but de faciliter
+			la connexion au WIFI GUEST pour ses collègues ayant un device Android.
+			
+			\n\nSi vous appréciez l\'appli, parlez en à vos collègues :)
+			
+			\n\nUne question, une remarque: envoyez un mail à axawifiguestconnect@gmail.com
+	    ]]>
+    </string>
+    
+    <string name="notif_title_connected">Connecté à Internet</string>
+    <string name="notif_content_connected">Connecté avec votre PassAXA</string>
+    <string name="notif_detail_login">Login: %1$s</string>
+	<string name="notif_detail_profile">Accès: %1$s</string>
+	<string name="notif_detail_ip_address">Adresse IP: %1$s</string>
+
+    <string name="notif_title_connexion_error">Problème de connexion au WIFI GUEST</string>
+    <string name="notif_content_incorrect_passaxa">PassAXA incorrect</string>   
+
+    <string name="notif_title_credentials_required">PassAXA requis pour le WIFI GUEST</string>
+    <string name="notif_content_credentials_required">Votre PassAXA est requis</string>
+
+    <string name="pref_category_general">General</string>
+    <string name="pref_category_internet_test">Avancé</string>
+    <string name="pref_auto_login_title">Auto login</string>
+    <string name="pref_auto_login_summary">Tente de se connecter automatiquement à Internet dès que votre device est connecté au WIFI GUEST</string>
+    <string name="pref_analytics_title">Google analytics</string>
+    <string name="pref_analytics_summary">Autorise l\'envoi de statistiques d\'utilisation, pour nous permettre d\'améliorer l\'application. Aucun email, mot de passe ou autre donnée personnelle ne sera récupérée.</string>
+    <string name="pref_internet_test_url_title">Url de test d\'accès à Internet</string>
+    <string name="pref_internet_test_url_summary">http://www.google.com</string>
+    
+</resources>

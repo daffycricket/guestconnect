@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   	<string name="crash_toast_text">AXA Guest Connect crashed, please accept our apologies :/</string>
+	<string name="crash_dialog_title">Crash !</string>
+	<string name="crash_dialog_text">An unexpected error got AXA Guest Connect to crash. Please press OK to send us an error report and help us fix it.</string>  
+	<string name="crash_dialog_ok_toast">Thanks !</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
+  	
+    <!-- Property id -->
+    <string name="ga_trackingId">UA-51594907-1</string>
+    	
+    <!-- Tracker settings -->
+  	<integer name="ga_sessionTimeout">300</integer>
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <string name="ga_logLevel">verbose</string>
+
+    <!-- Screen name that will appear in reports -->
+    <!-- screenName name="org.nla.android.axaguestconnect.activities.MainActivity">
+        GuestConnect MainActivity
+    </screenName-->
+
+</resources>
