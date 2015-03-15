@@ -19,7 +19,7 @@ import android.preference.PreferenceManager;
 @ReportsCrashes(mailTo = "wifiguestconnect@gmail.com", customReportContent = {
 		ReportField.APP_VERSION_CODE, ReportField.APP_VERSION_NAME, ReportField.BRAND,
 		ReportField.PHONE_MODEL, ReportField.ANDROID_VERSION, ReportField.CUSTOM_DATA,
-		ReportField.STACK_TRACE, ReportField.LOGCAT, ReportField.SHARED_PREFERENCES }, mode = ReportingInteractionMode.DIALOG, resToastText = R.string.crash_toast_text, resDialogText = R.string.crash_dialog_text, resDialogIcon = android.R.drawable.ic_dialog_info, resDialogTitle = R.string.crash_dialog_title, resDialogOkToast = R.string.crash_dialog_ok_toast)
+		ReportField.STACK_TRACE, ReportField.LOGCAT}, mode = ReportingInteractionMode.DIALOG, resToastText = R.string.crash_toast_text, resDialogText = R.string.crash_dialog_text, resDialogIcon = android.R.drawable.ic_dialog_info, resDialogTitle = R.string.crash_dialog_title, resDialogOkToast = R.string.crash_dialog_ok_toast)
 public class App extends Application {
 
 	private static final String FLURRY_KEY = "JZVZYJJ6N6Z2G5D8B4SP";
