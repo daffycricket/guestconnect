@@ -1,9 +1,25 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.nla.android.axaguestconnect.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_about_item"
         android:orderInCategory="100"
         android:showAsAction="never"
+        android:title="@string/action_about"/>
+    <item
+        android:id="@+id/action_check_connect_item"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="@string/action_check_connect"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="300"
+        android:showAsAction="never"
         android:title="@string/action_settings"/>
-
+    <item
+        android:id="@+id/action_history"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:title="@string/action_history"/>
 </menu>

@@ -1,9 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Hello Maven</string>
-    <string name="hello">Hello guestconnect!</string>
+    <string name="app_name">Guest Connect</string>
+    <string name="activity_settings">Settings</string>
+    <string name="activity_history">Connection history</string>
+    <string name="activity_terms_of_use">Terms of use for GUEST WIFI</string>
+    
+    <string name="action_about">About</string>
+    <string name="action_check_connect">Check connection</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="action_history">History</string>
+        
+    <string name="tab_french">French</string>
+    <string name="terms_of_use_title_fr">Charte d\'utilisation</string>
+    <string name="terms_of_use_content_fr">
+	    <![CDATA[
+	        Les utilisateurs doivent lire, être en accord et accepter toutes les conditions générales contenues dans cet avis avant d\'utiliser l\'Accès Internet Sans Fil Wifi Invité.<br/>
+			Ce service vous est offert gracieusement par AXA Tech pour la durée de votre visite.<br/>
+			Vous devez être conscients que cet Accès Wifi fournit un accès sans fil <b>non chiffré</b> à Internet. Par conséquent vous êtes responsables de la sécurité de votre système et assumez les risques d\'un accès non chiffré à Internet. Il vous incombe de prendre les mesures nécessaires pour chiffrer vos transmissions confidentielles, sauvegarder vos données, protéger votre système avec un Pare-feu et utiliser une authentification forte.<br/>
+			L\'utilisation de cet accès est réservée à des fins professionnelles : vous êtes priés de ne pas accéder à des sites au contenu offensant ou illégal et de ne pas télécharger de contenus protégés par le droit d\'auteur sans permission explicite.<br/>
+			Les activités sur ce réseau, autorisées et non autorisées, peuvent être contrôlées<br/>
+	    ]]>
+    </string>
 
+    <string name="tab_english">English</string>
+    <string name="terms_of_use_title_en">Terms of use</string>
+    <string name="terms_of_use_content_en">
+	    <![CDATA[        
+			Authorized users must read, agree with and accept all of the terms and conditions contained in this notice before using the Wifi Guest Access.<br/>
+			AXA Tech is providing you access to our Guest Wifi network as a complimentary service for you convenience during your visit at AXA Tech.<br/>
+			You must be aware that this Wifi Access provides <b>unencrypted</b> wireless access to the Internet, and agree you are responsible for the security of your system and you understand the risks of unencrypted access to the Internet, and will take any necessary measures to encrypt confidential transmissions, to backup up any data and to protect your system with a Firewall and a robust user authentication.<br/>
+			The usage of this access is reserved for professional purposes: you are requested not to access to sites with offensive or illegal content and not to download copyrighted material without explicit permission.<br/>
+			Authorized and unauthorized activities may be monitored<br/>
+	    ]]>        
+    </string>
+    
+    <string name="title_about">About</string>
+    <string name="title_authentication_result">Connection result</string>
+    <string name="title_authentication_details">Connection details</string>
+    
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    
+    <string name="lblEmail">Email</string>
+    <string name="hint_email">firstname.surname@axa.com</string>
+    <string name="lblPassword">Password</string>
+    <string name="lblAcceptTermsOfUse">I accept the terms of use</string>
+    <string name="lblAccess">Access</string>
+    <string name="lblConnectionTime">Connection time</string>
+    <string name="lblIPAddress">IP address</string>
+    <string name="btn_connect">Connect</string>
+    <string name="btn_disconnect">Disconnect</string>
+
+    <string name="msg_logon_succeeded">%1$s logon succeeded, %2$s connected with %3$s on IP address %4$s</string>
+    <string name="msg_logon_failed_invalid_passaxa">%1$s logon failed due to invalid credentials</string>
+    <string name="msg_logon_failed">%1$s logon failed</string>
+    <string name="msg_logon_failed_with_details">%1$s logon failed: %2$s</string>
+    <string name="msg_logon_type_manual">Manual</string>
+    <string name="msg_logon_type_auto">Auto</string>
+    
+    <string name="msg_authentication_successful">Connection to Internet successful</string>    
+    <string name="msg_authentication_failed">Connection failed: </string>
+    <string name="msg_disconnected">Disconnected</string>
+    <string name="msg_fill_required_fields">Please fill in your email and password</string>    
+    <string name="msg_type_valid_email">Please type in a valid email</string>    
+    <string name="msg_not_connected_to_guest">Not connected to Guest WIFI</string>        
+    <string name="msg_authenticating">Authenticating...</string>    
+    <string name="msg_disconnecting">Disconnecting...</string>    
+    <string name="msg_check_internet_err_incorrect_url">Specified url is incorrect, checking access to default url www.google.com...</string>    
+    <string name="msg_check_internet">Checking access to</string>
+    <string name="msg_connected_to_internet_through_guest">Connected to Internet through GUEST WIFI</string>
+    <string name="msg_connected_to_internet_not_through_guest">Connected to Internet... but not through GUEST WIFI</string>
+    <string name="msg_not_connected_to_internet">Not connected to Internet</string>
+    <string name="msg_incorrect_passaxa">Incorrect email or password. Try again or reset your PassAxa.</string>   
+    
+    <string name="msg_about">
+	    <![CDATA[
+			GuestConnect helps you connect easily to the Guest WIFI.
+			It does so by allowing you to store your PassAXA instead of having to retype it every day.
+			\n\GuestConnect doesn\'t store either email or password anywhere but on your phone:
+			it never sends them over the internet or store them in any cloud database.
+			\n\nAlso, be aware that GuestConnect is not an official AXA app. It\'s been developped
+			by an internal employee to help his fellow colleagues avoiding the hassle of entering 
+			several times a day their PassAXA on their Android device...
+			\n\nIf you like it, please tell your colleagues so :)
+			\n\nAny question or feddback: send an email to axawifiguestconnect@gmail.com
+	    ]]>
+    </string>
+    
+    <string name="notif_title_connected">Succesfully connected to Internet</string>
+    <string name="notif_content_connected">Connected with your PassAXA</string>
+    <string name="notif_detail_login">Login: %1$s</string>
+	<string name="notif_detail_profile">Services: %1$s</string>
+	<string name="notif_detail_ip_address">IP address: %1$s</string>
+
+    <string name="notif_title_connexion_error">GUEST WIFI connection problem</string>
+    <string name="notif_content_incorrect_passaxa">Incorrect PassAXA</string>   
+    
+    <string name="notif_title_credentials_required">GuestConnect needs your PassAXA</string>
+    <string name="notif_content_credentials_required">Your PassAXA is required</string>
+        
+    <string name="pref_category_general">General</string>
+    <string name="pref_category_internet_test">Advanced</string>
+    <string name="pref_category_debug">Debug (developper only)</string>
+    <string name="pref_auto_login_title">Auto login</string>
+    <string name="pref_auto_login_summary">Auto login when device is connected to GUEST WIFI</string>
+    <string name="pref_analytics_title">Google analytics</string>
+    <string name="pref_analytics_summary">Allow anonymous statistics to help us improve the app. No user or password will ever be sent to Google Analytics.</string>
+    <string name="pref_internet_test_url_title">Internet test url</string>
+    <string name="pref_internet_test_url_summary">http://www.google.com</string>
+    <string name="pref_is_debug_mode_title">Debug mode</string>
+    <string name="pref_is_debug_mode_summary">Debug mode for testing purposes</string>
+    
+    
+    
 </resources>
