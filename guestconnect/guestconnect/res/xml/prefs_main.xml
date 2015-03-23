@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory
-        android:title="@string/pref_category_general"
-        android:key="pref_key_general">
-	    <CheckBoxPreference
-	        android:key="pref_auto_start_app_if_connected_to_guest"
-	        android:title="@string/pref_auto_login_title"
-	        android:summary="@string/pref_auto_login_summary"
-	        android:defaultValue="true" />
-	    <CheckBoxPreference
-	        android:key="pref_allow_analytics"
-	        android:title="@string/pref_analytics_title"
-	        android:summary="@string/pref_analytics_summary"
-	        android:defaultValue="true" />
+        android:key="pref_key_general"
+        android:title="@string/pref_category_general" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_auto_start_app_if_connected_to_guest"
+            android:summary="@string/pref_auto_login_summary"
+            android:title="@string/pref_auto_login_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_allow_analytics"
+            android:summary="@string/pref_analytics_summary"
+            android:title="@string/pref_analytics_title" />
     </PreferenceCategory>
-	    	    
     <PreferenceCategory
-        android:title="@string/pref_category_internet_test"
-        android:key="pref_key_internet_test">
-	    <EditTextPreference
-	        android:key="pref_test_url"
-	        android:title="@string/pref_internet_test_url_title"
-	        android:summary="@string/pref_internet_test_url_summary"
-	        android:defaultValue="www.google.com" />
+        android:key="pref_key_internet_test"
+        android:title="@string/pref_category_internet_test" >
+        <EditTextPreference
+            android:defaultValue="www.google.com"
+            android:key="pref_test_url"
+            android:summary="@string/pref_internet_test_url_summary"
+            android:title="@string/pref_internet_test_url_title" />
     </PreferenceCategory>
-    
-    <!-- PreferenceCategory
-        android:title="@string/pref_category_debug"
-        android:key="pref_key_debug">
-	    <CheckBoxPreference
-	        android:key="pref_is_debug_mode"
-	        android:title="@string/pref_is_debug_mode_title"
-	        android:summary="@string/pref_is_debug_mode_summary"
-	        android:defaultValue="false" />
-    </PreferenceCategory-->
-    
+    <PreferenceCategory
+        android:key="pref_key_debug"
+        android:title="@string/pref_category_debug" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_is_debug_mode"
+            android:summary="@string/pref_is_debug_mode_summary"
+            android:title="@string/pref_is_debug_mode_title" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
