@@ -48,6 +48,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class MainActivity extends Activity {
 
@@ -186,11 +187,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Show terms of use.
-	 * 
-	 * @param view
-	 */
+	@OnClick(R.id.chkTermsOfUse)
 	public void onClickOnTerms(View view) {
 		this.mChkTermsOfUse.setChecked(true);
 		TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnTerms);
@@ -480,11 +477,6 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -526,11 +518,6 @@ public class MainActivity extends Activity {
 		this.onNewIntent(this.getIntent());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onNewIntent(android.content.Intent)
-	 */
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
@@ -542,11 +529,6 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onResume()
-	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -556,11 +538,6 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onStart()
-	 */
 	@Override
 	protected void onStart() {
 		super.onStart();
