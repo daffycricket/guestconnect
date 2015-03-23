@@ -128,7 +128,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:enabled="false"
-            android:onClick="onClickOnDisconnect"
             android:text="@string/btn_disconnect" />
     </LinearLayout>
 

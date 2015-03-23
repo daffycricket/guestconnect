@@ -132,11 +132,7 @@ public class MainActivity extends Activity {
 		}
 	};
 
-	/**
-	 * Handles click on connection.
-	 * 
-	 * @param view
-	 */
+	@OnClick(R.id.btnConnect)
 	public void onClickOnConnect(View view) {
 		TrackingHelper.trackEvent(TrackCategory.Main,
 				TrackAction.ClickOnConnect);
@@ -166,11 +162,7 @@ public class MainActivity extends Activity {
 						.getText().toString().trim());
 	}
 
-	/**
-	 * Handles click on disconnexion.
-	 * 
-	 * @param view
-	 */
+	@OnClick(R.id.btnDisconnect)
 	public void onClickOnDisconnect(View view) {
 		TrackingHelper.trackEvent(TrackCategory.Main,
 				TrackAction.ClickOnDisconnect);
