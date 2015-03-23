@@ -46,34 +46,39 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
-/**
- * Main activity.
- * 
- * @author Nicolas LAURENT daffycricket<a>yahoo.fr
- */
 public class MainActivity extends Activity {
 
 	private static final Pattern RFC2822 = Pattern
 			.compile("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
 
-	private Button mBtnDisconnect;
+	@InjectView(R.id.btnDisconnect)
+	Button mBtnDisconnect;
 
-	private CheckBox mChkTermsOfUse;
+	@InjectView(R.id.chkTermsOfUse)
+	CheckBox mChkTermsOfUse;
 
-	private EditText mEdtAccess;
+	@InjectView(R.id.edtAccess)
+	EditText mEdtAccess;
 
-	private EditText mEdtEmail;
+	@InjectView(R.id.edtEmail)
+	EditText mEdtEmail;
 
-	private EditText mEdtIPAddress;
+	@InjectView(R.id.edtIp)
+	EditText mEdtIPAddress;
 
-	private EditText mEdtPassword;
+	@InjectView(R.id.edtPassword)
+	EditText mEdtPassword;
 
-	private EditText mEdtUniversalTime;
+	@InjectView(R.id.edtUniversalTime)
+	EditText mEdtUniversalTime;
+
+	@InjectView(R.id.layoutConnexionDetails)
+	View mLayoutConnexionDetails;
 
 	private boolean mIsConnected;
-
-	private View mLayoutConnexionDetails;
 
 	/**
 	 * Focus change listener for email and password.
@@ -132,27 +137,32 @@ public class MainActivity extends Activity {
 	 * @param view
 	 */
 	public void onClickOnConnect(View view) {
-		TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnConnect);
+		TrackingHelper.trackEvent(TrackCategory.Main,
+				TrackAction.ClickOnConnect);
 		this.hideKeyboard();
 		if (this.mEdtEmail.getText().toString().trim().length() == 0
 				|| this.mEdtPassword.getText().toString().trim().length() == 0) {
-			Toast.makeText(this, R.string.msg_fill_required_fields, Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.msg_fill_required_fields,
+					Toast.LENGTH_LONG).show();
 			return;
 		}
 
 		if (!this.isEmailValid()) {
-			Toast.makeText(this, R.string.msg_type_valid_email, Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.msg_type_valid_email,
+					Toast.LENGTH_LONG).show();
 			return;
 		}
 
 		if (!NetworkHelper.isConnectedToGuestWifi(this)) {
-			Toast.makeText(this, R.string.msg_not_connected_to_guest, Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.msg_not_connected_to_guest,
+					Toast.LENGTH_LONG).show();
 			return;
 		}
 
 		this.storeEmailAndPassword();
-		new ConnectTask(this, this.onAttemptToConnectCallback).execute(this.mEdtEmail.getText()
-				.toString().trim(), this.mEdtPassword.getText().toString().trim());
+		new ConnectTask(this, this.onAttemptToConnectCallback).execute(
+				this.mEdtEmail.getText().toString().trim(), this.mEdtPassword
+						.getText().toString().trim());
 	}
 
 	/**
@@ -161,14 +171,17 @@ public class MainActivity extends Activity {
 	 * @param view
 	 */
 	public void onClickOnDisconnect(View view) {
-		TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnDisconnect);
+		TrackingHelper.trackEvent(TrackCategory.Main,
+				TrackAction.ClickOnDisconnect);
 		if (this.mIsConnected) {
 			if (NetworkHelper.isConnectedToGuestWifi(this)) {
-				new DisconnectTask(this, this.onAttemptToDisconnectCallback).execute(this.mEdtEmail
-						.getText().toString().trim(), App.getApp().getAuthenticationDetails()
-						.getPasswordDigest());
+				new DisconnectTask(this, this.onAttemptToDisconnectCallback)
+						.execute(this.mEdtEmail.getText().toString().trim(),
+								App.getApp().getAuthenticationDetails()
+										.getPasswordDigest());
 			} else {
-				Toast.makeText(this, R.string.msg_not_connected_to_guest, Toast.LENGTH_LONG).show();
+				Toast.makeText(this, R.string.msg_not_connected_to_guest,
+						Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -258,7 +271,8 @@ public class MainActivity extends Activity {
 
 		// check internet connexion
 		case R.id.action_check_connect_item: {
-			TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnCheckConnexion);
+			TrackingHelper.trackEvent(TrackCategory.Main,
+					TrackAction.ClickOnCheckConnexion);
 
 			SharedPreferences sharedPreferences = PreferenceManager
 					.getDefaultSharedPreferences(this);
@@ -272,27 +286,30 @@ public class MainActivity extends Activity {
 
 				// if user-specified url is incorrect, fallback to default
 				// url
-				new CheckInternetConnectionTask(this, this.onInternetConnexionCheckedCallback)
-						.execute();
+				new CheckInternetConnectionTask(this,
+						this.onInternetConnexionCheckedCallback).execute();
 			}
 			return true;
 		}
 
 		// show about panel
 		case R.id.action_about_item:
-			TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnShowAboutMessage);
+			TrackingHelper.trackEvent(TrackCategory.Main,
+					TrackAction.ClickOnShowAboutMessage);
 			this.showAboutMessage();
 			return true;
 
 			// show preference panel
 		case R.id.action_settings:
-			TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnShowSettings);
+			TrackingHelper.trackEvent(TrackCategory.Main,
+					TrackAction.ClickOnShowSettings);
 			this.showSettings();
 			return true;
 
 			// show history activity
 		case R.id.action_history:
-			TrackingHelper.trackEvent(TrackCategory.Main, TrackAction.ClickOnShowHistory);
+			TrackingHelper.trackEvent(TrackCategory.Main,
+					TrackAction.ClickOnShowHistory);
 			this.startActivity(new Intent(this, HistoryActivity.class));
 			return true;
 
@@ -318,7 +335,8 @@ public class MainActivity extends Activity {
 	 */
 	private boolean isEmailValid() {
 		return this.mEdtEmail.getText().toString().trim().length() != 0
-				&& RFC2822.matcher(this.mEdtEmail.getText().toString().trim()).matches();
+				&& RFC2822.matcher(this.mEdtEmail.getText().toString().trim())
+						.matches();
 	}
 
 	/**
@@ -329,11 +347,13 @@ public class MainActivity extends Activity {
 	private void onAttemptToConnect(AsyncActionResult result) {
 		if (result.getStatus() == ResultState.ACTION_SUCCEEDED) {
 			this.mIsConnected = true;
-			Toast.makeText(this, R.string.msg_authentication_successful, Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.msg_authentication_successful,
+					Toast.LENGTH_LONG).show();
 		} else {
 			this.mIsConnected = false;
 			if (result.getException() instanceof BadPasswordOrLoginException) {
-				this.showAuthenticationError(this.getString(R.string.msg_incorrect_passaxa));
+				this.showAuthenticationError(this
+						.getString(R.string.msg_incorrect_passaxa));
 			} else {
 				this.showAuthenticationError(result.getException().getMessage());
 			}
@@ -350,7 +370,8 @@ public class MainActivity extends Activity {
 	private void onAttemptToDisconnect(AsyncActionResult result) {
 		this.mIsConnected = false;
 		App.getApp().setAuthenticationDetails(null);
-		Toast.makeText(this, R.string.msg_disconnected, Toast.LENGTH_LONG).show();
+		Toast.makeText(this, R.string.msg_disconnected, Toast.LENGTH_LONG)
+				.show();
 		this.updateConnectionState();
 	}
 
@@ -360,8 +381,8 @@ public class MainActivity extends Activity {
 	private void showAboutMessage() {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle(R.string.title_about);
-		alertDialogBuilder.setCancelable(false).setPositiveButton(R.string.btn_ok,
-				new DialogInterface.OnClickListener() {
+		alertDialogBuilder.setCancelable(false).setPositiveButton(
+				R.string.btn_ok, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int id) {
 						dialog.cancel();
@@ -380,15 +401,15 @@ public class MainActivity extends Activity {
 	private void showAuthenticationError(String errorMessage) {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		alertDialogBuilder.setTitle(R.string.title_authentication_result);
-		alertDialogBuilder.setCancelable(false).setPositiveButton(R.string.btn_ok,
-				new DialogInterface.OnClickListener() {
+		alertDialogBuilder.setCancelable(false).setPositiveButton(
+				R.string.btn_ok, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int id) {
 						dialog.cancel();
 					}
 				});
-		alertDialogBuilder.setMessage(this.getString(R.string.msg_authentication_failed)
-				+ errorMessage);
+		alertDialogBuilder.setMessage(this
+				.getString(R.string.msg_authentication_failed) + errorMessage);
 		AlertDialog alertDialog = alertDialogBuilder.create();
 		alertDialog.show();
 	}
@@ -406,9 +427,10 @@ public class MainActivity extends Activity {
 	 */
 	private void storeEmailAndPassword() {
 		Editor editor = this.mSecuredPreferences.edit();
-		editor.putString(PreferenceConstants.EMAIL, this.mEdtEmail.getText().toString().trim());
-		editor.putString(PreferenceConstants.PASSWORD, this.mEdtPassword.getText().toString()
-				.trim());
+		editor.putString(PreferenceConstants.EMAIL, this.mEdtEmail.getText()
+				.toString().trim());
+		editor.putString(PreferenceConstants.PASSWORD, this.mEdtPassword
+				.getText().toString().trim());
 		editor.commit();
 	}
 
@@ -425,13 +447,15 @@ public class MainActivity extends Activity {
 			// in that case, get last event from db
 			if (authenticationDetails == null) {
 				DatabaseHelper dbHelper = new DatabaseHelper(this);
-				Event lastConnectionEvent = dbHelper.getLastConnexionSuccessfulEvent();
+				Event lastConnectionEvent = dbHelper
+						.getLastConnexionSuccessfulEvent();
 
 				// ensure at least a connection event exists, otherwise treat as
 				// if app is not connected
 				if (lastConnectionEvent != null) {
 					authenticationDetails = Constants.GSON.fromJson(
-							lastConnectionEvent.getContent(), AuthenticationDetails.class);
+							lastConnectionEvent.getContent(),
+							AuthenticationDetails.class);
 				} else {
 					this.mIsConnected = false;
 				}
@@ -443,8 +467,10 @@ public class MainActivity extends Activity {
 			this.mBtnDisconnect.setEnabled(true);
 			this.mEdtAccess.setText(authenticationDetails.getServices());
 			this.mEdtIPAddress.setText(authenticationDetails.getIpAddress());
-			Date connexionDate = new Date(authenticationDetails.getConnexionTime());
-			this.mEdtUniversalTime.setText(Constants.PST_FORMAT.format(connexionDate));
+			Date connexionDate = new Date(
+					authenticationDetails.getConnexionTime());
+			this.mEdtUniversalTime.setText(Constants.PST_FORMAT
+					.format(connexionDate));
 		} else {
 			this.mBtnDisconnect.setEnabled(false);
 			this.mLayoutConnexionDetails.setVisibility(View.INVISIBLE);
@@ -463,28 +489,23 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_main);
+		ButterKnife.inject(this);
 
 		this.mIsConnected = false;
-		this.mEdtEmail = (EditText) this.findViewById(R.id.edtEmail);
-		this.mEdtPassword = (EditText) this.findViewById(R.id.edtPassword);
-		this.mChkTermsOfUse = (CheckBox) this.findViewById(R.id.chkTermsOfUse);
-
-		this.mEdtIPAddress = (EditText) this.findViewById(R.id.edtIp);
-		this.mEdtAccess = (EditText) this.findViewById(R.id.edtAccess);
-		this.mEdtUniversalTime = (EditText) this.findViewById(R.id.edtUniversalTime);
-
-		this.mBtnDisconnect = (Button) this.findViewById(R.id.btnDisconnect);
-		this.mLayoutConnexionDetails = this.findViewById(R.id.layoutConnexionDetails);
-
-		this.mSecuredPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		String email = this.mSecuredPreferences.getString(PreferenceConstants.EMAIL, null);
-		String password = this.mSecuredPreferences.getString(PreferenceConstants.PASSWORD, null);
+		this.mSecuredPreferences = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String email = this.mSecuredPreferences.getString(
+				PreferenceConstants.EMAIL, null);
+		String password = this.mSecuredPreferences.getString(
+				PreferenceConstants.PASSWORD, null);
 
 		this.mEdtEmail.setText(email);
 		this.mEdtPassword.setText(password);
 
-		this.mEdtEmail.setOnFocusChangeListener(this.mOnFocusOnEmailOrPasswordChangedListener);
-		this.mEdtPassword.setOnFocusChangeListener(this.mOnFocusOnEmailOrPasswordChangedListener);
+		this.mEdtEmail
+				.setOnFocusChangeListener(this.mOnFocusOnEmailOrPasswordChangedListener);
+		this.mEdtPassword
+				.setOnFocusChangeListener(this.mOnFocusOnEmailOrPasswordChangedListener);
 
 		View imgEyesOpen = this.findViewById(R.id.imgEyesOpen);
 		imgEyesOpen.setOnTouchListener(new OnTouchListener() {
