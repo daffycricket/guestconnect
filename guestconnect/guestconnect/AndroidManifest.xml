@@ -24,6 +24,10 @@
         <activity android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="org.acra.CrashReportDialog" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
 
         <service android:name="org.nla.android.guestconnect.services.ConnectService"/>
+        <service android:exported="false" android:name="com.octo.android.robospice.JacksonGoogleHttpClientSpiceService"/>
+
+        <activity android:label="Spice" android:name="org.nla.android.guestconnect.spice.SpiceActivity">
+        </activity>
 
         <receiver android:label="NetworkChangeReceiver" android:name="org.nla.android.guestconnect.receivers.NetworkChangeReceiver">
             <intent-filter>

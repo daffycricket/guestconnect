@@ -15,6 +15,8 @@
 	<packaging>apk</packaging>
 	<name>guestconnect - Application</name>
 
+	<!-- properties> <robospice.version>1.4.14</robospice.version> </properties -->
+
 	<dependencies>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -46,6 +48,24 @@
 			<artifactId>butterknife</artifactId>
 			<version>6.1.0</version>
 		</dependency>
+		<!-- dependency> <groupId>com.octo.android.robospice</groupId> <artifactId>robospice-okhttp</artifactId> 
+			<version>${robospice.version}</version> </dependency -->
+		<dependency>
+			<groupId>com.octo.android.robospice</groupId>
+			<artifactId>robospice</artifactId>
+			<version>1.4.14</version>
+		</dependency>
+		<dependency>
+			<groupId>com.octo.android.robospice</groupId>
+			<artifactId>robospice-google-http-client</artifactId>
+			<version>1.4.14</version>
+		</dependency>
+		<dependency>
+			<groupId>com.octo.android.robospice</groupId>
+			<artifactId>robospice-okhttp</artifactId>
+			<version>1.4.14</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>

@@ -17,6 +17,7 @@ import org.nla.android.guestconnect.common.TrackingHelper;
 import org.nla.android.guestconnect.common.TrackingHelper.TrackAction;
 import org.nla.android.guestconnect.common.TrackingHelper.TrackCategory;
 import org.nla.android.guestconnect.common.TrackingHelper.TrackScreen;
+import org.nla.android.guestconnect.spice.SpiceActivity;
 import org.nla.android.guestconnect.tasks.AsyncActionResult;
 import org.nla.android.guestconnect.tasks.AsyncActionResult.ResultState;
 import org.nla.android.guestconnect.tasks.CheckInternetConnectionTask;
@@ -299,7 +300,8 @@ public class MainActivity extends Activity {
 		case R.id.action_history:
 			TrackingHelper.trackEvent(TrackCategory.Main,
 					TrackAction.ClickOnShowHistory);
-			this.startActivity(new Intent(this, HistoryActivity.class));
+			// this.startActivity(new Intent(this, HistoryActivity.class));
+			this.startActivity(new Intent(this, SpiceActivity.class));
 			return true;
 
 			// what else...
